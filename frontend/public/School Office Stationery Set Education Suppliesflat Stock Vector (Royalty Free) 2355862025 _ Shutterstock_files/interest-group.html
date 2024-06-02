@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- saved from url=(0313)https://fledge.us.criteo.com/interest-group?data=J4DjvXxxWUtHb3d3dk5jMHJETzliaEZ5S3VRd2tVU1BjeWlLS25tOXMvWk5JaHhvTTlWajZTWEdBYjlvdThmeUZFcE9aRnVWTlVqYmpZcm9JNVVTaUlFRi9aNmNnWmxsSEdwdkdIRmJ3ZG82Rnd4MWNkVjVHUnkyTUxMRkpaOWxKZWtoNW00d003WHJuVlh2WHRvcmdmclBBanlXL1MxYW9YdTd1b1ZKNjBxelFPTmx1Q3BFRDBZdkM5cklQazJZcklwcDd8 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <!-- Chrome origin trial token -->
+    <meta http-equiv="origin-trial" content="AnolOEEMEnMaCvmUcw/eijaA/Ntx4pke43TW8O1+XFxTL7yMSzmBnkPrjQ33sKmqvREEpLQOE72gUMzHLu9KiAoAAABseyJvcmlnaW4iOiJodHRwczovL2NyaXRlby5jb206NDQzIiwiZmVhdHVyZSI6IlByaXZhY3lTYW5kYm94QWRzQVBJcyIsImV4cGlyeSI6MTY5NTE2Nzk5OSwiaXNTdWJkb21haW4iOnRydWV9">
+</head>
+<body>
+
+<script>
+    function getBswIg(src) {
+        const elt = document.createElement("iframe");
+        elt.allow = "join-ad-interest-group";
+        elt.width = "0";
+        elt.height = "0";
+        elt.style.display = "none";
+        elt.title = "BSW IG";
+        elt.src = src;
+
+        document.body.appendChild(elt);
+    }
+
+    if (!navigator.joinAdInterestGroup) {
+        console.log("No fledge for you!");
+    } else {
+        var igs = [{"owner":"https://fledge.us.criteo.com","name":"W16Pcnw2MFJRaUFaZDNwVC84SUR5dElxaitnPT18","lifetimeMs":2592000000,"priorityVector":{"browserSignals.ageInMinutes":-1,"browserSignals.one":-86400},"biddingLogicURL":"https://fledge.us.criteo.com/simplebid?platform=us","biddingWasmHelperURL":"https://fledge.us.criteo.com/criteo.wasm","trustedBiddingSignalsURL":"https://fledge.us.criteo.com/getvalues","trustedBiddingSignalsKeys":["cYrJFHxoaTBtMmE5cHFxUUtrVnY3UEZnTFkybnZXUy8vZVJDMytHU2VVcHN0TzZlMnlUWjU0dCtLZTlPSlFYYmx3K0gxa1JJcVJSaTBHaHpWbjhPaUJwT1ZxcUQ1V3ZSYWF1QjliTlNvYi9td0t4N1BSdGlHWHJucnh2YTdqci8vVnRzTGtmN3Y1cmQzQU82UVR5NWgrNmVKOVE9PXw"],"maxTrustedBiddingSignalsURLLength":32768,"userBiddingSignals":{},"updateURL":"https://fledge.us.criteo.com/interest-group/update?key=w83mB3xpbUJPMEZGSWRlOVdJcjM0cHl6dnFhVmhZK0xQem03Wm8vaG1ma09PL2Z5MTFQWnZhR0FuQjViMGNlYkgrU1p0OHBaQXBJWVE3dEV4ZXRRK1pOeGxCa3YvTlJNTyt5ekVURDBpalhUOFVTcEpBN2Vzb1l5R2ZiV1FSMm8rcHkycnJtZzdIdXFSa0JiTDNEeStyYURuQlE9PXw","ads":[],"adComponents":[],"trustedBiddingSignalsSlotSizeMode":"slot-size","executionMode":"group-by-origin"}];
+        var expiration = 2592000;
+        var errorEndpoint = "https://fledge.us.criteo.com/interest-group/error?pid=36026";
+        if (navigator.joinAdInterestGroup.length == 1) {
+            for (const ig of igs) {
+                navigator.joinAdInterestGroup(ig).catch((e) => fetch(`${errorEndpoint}&message=${encodeError(e)}`));
+            }
+        } else {
+            // This is for backwards-compatibility
+            // The 1 - arg implementation is future - proof
+            for (const ig of igs) {
+                navigator.joinAdInterestGroup(ig, expiration).catch((e) => fetch(`${errorEndpoint}&message=${encodeError(e)}`));
+            }
+        }
+        if (false) {
+            getBswIg("https://dsp-paapi-sandbox.bsw-ig.criteo.com/paapi/dsp/html/index");
+            getBswIg("https://paa-proxy-dsp.bsw-sb.criteo.com/paapi/paa-proxy/dsp/html/index/bsw-sb-ig-paa-proxy");
+        }
+    }
+
+    function encodeError(error) {
+        return encodeURIComponent(error.name + ':' + error.message);
+    }
+
+    async function measureAudienceSize() {
+        // Measuring audience size
+        // Register worklet
+        if((!window?.sharedStorage?.worklet?.addModule) || (!window?.sharedStorage?.run)){
+            return;
+        }
+        await window.sharedStorage.worklet.addModule('');
+
+        // Run audience size measurement operation
+        await window.sharedStorage.run('audience-size-measurement', {
+            data: { bucketKey: BigInt('1152836'), contributionValue: 8192}
+        });
+    }
+
+    //TODO reactivate audience-size-measurement
+    //measureAudienceSize();
+
+</script>
+
+
+</body></html>
