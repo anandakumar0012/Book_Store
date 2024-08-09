@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use(cors({
-    origin: ["https://deploy-mern-1whq.vercel.app"],
+    origin: ["https://book-store-front-khaki.vercel.app"],
     methods: ["GET", "POST"],
     credentials: true
 })
