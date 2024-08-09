@@ -21,8 +21,7 @@ const CreateBooks = () => {
     };
     setLoading(true);
     axios
-      .post('https://book-store-backend-vwhu.onrender.com/books', data)
-      // .post('http://localhost:5555/books', data)
+      .post('http://localhost:5555/books', data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book Created successfully', { variant: 'success' });

@@ -14,8 +14,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://book-store-backend-vwhu.onrender.com/books")
-      // .get("http://localhost:5555/books")
+      .get("https://book-store-back-mocha.vercel.app//books")
       .then((response) => {
         setBooks(response.data.data);
         setLoading(false);
