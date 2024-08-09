@@ -15,6 +15,7 @@ const DeleteBook = () => {
     setLoading(true);
     axios
       .delete(`https://book-store-back-mocha.vercel.app/books/${id}`)
+      // .delete(`http://localhost:5555/books/${id}`)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book Deleted successfully', { variant: 'success' });
