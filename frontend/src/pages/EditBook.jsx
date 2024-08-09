@@ -37,7 +37,7 @@ const EditBook = () => {
     };
     setLoading(true);
     axios
-      .put(`https://book-store-back-mocha.vercel.app/${id}`, data)
+      .put(`https://book-store-back-mocha.vercel.app/books/${id}`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book Edited successfully', { variant: 'success' });
