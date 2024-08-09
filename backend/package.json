@@ -16,5 +16,6 @@
     "express": "^4.19.2",
     "mongoose": "^8.3.5",
     "nodemon": "^3.1.0"
-  }
+  },
+  "proxy": "https://book-store-back-mocha.vercel.app"
 }
