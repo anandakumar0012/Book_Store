@@ -14,7 +14,7 @@ const DeleteBook = () => {
   const handleDeleteBook = () => {
     setLoading(true);
     axios
-      .delete(`https://book-store-back-mocha.vercel.app/books/${id}`)
+      .delete(`https://book-store-backend-vwhu.onrender.com/books/${id}`)
       // .delete(`http://localhost:5555/books/${id}`)
       .then(() => {
         setLoading(false);
