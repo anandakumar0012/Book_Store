@@ -11,8 +11,8 @@ app.use(express.json());
 app.use(cors());
 
 app.use(cors({
-    origin: ["https://book-store-front-khaki.vercel.app"],
-    methods: ["GET", "POST"],
+    origin: "https://book-store-front-khaki.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 })
 );
