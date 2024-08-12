@@ -14,7 +14,7 @@ app.options('/books', cors());
 
 app.use(cors({
     origin: ["https://book-store-front-ten.vercel.app/books"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTION"],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
 })
