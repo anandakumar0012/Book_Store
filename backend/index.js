@@ -13,7 +13,7 @@ app.use(express.json());
 app.options('/books', cors());
 
 app.use(cors({
-    origin: ["https://book-store-front-ten.vercel.app"],
+    origin: ["https://book-store-front-ten.vercel.app/books"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
