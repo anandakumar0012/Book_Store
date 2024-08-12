@@ -20,6 +20,10 @@ app.use(cors({
 })
 );
 
+header('Access-Control-Allow-Origin: *');
+header('Acess-Control-Allow-Methods: POST, GET, PUT, OPTION, DELETE');
+header('Access-Control-Allow-Headers: Content-Type, X-Auth-Token, Origin, Authorization');
+
 app.get("/", (req, res) => {
     console.log(req);
     return res.send("Hello!");
